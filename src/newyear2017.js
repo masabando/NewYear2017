@@ -82,9 +82,12 @@ function sprite() {
         x = get_mousex(e);
         pic.y = ~~(-(x-x0)/20)*pic.height;
         sprite.css('background-position', '0 ' + (pic.y0 + pic.y) + 'px');
+        if (pic.y0 + pic.y <= -pic.height*pic.max) {
+          $('#title').html('＼ Happy New Year ／');
+        }
         if (logflag) {
           $('#log').css('color', '#fff');
-          $('#log').html(pic.y0);
+          $('#log').html(pic.y0 + pic.y);
         }
       }
     });
