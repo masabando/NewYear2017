@@ -1,5 +1,5 @@
 //var targtime = "2017/1/1";
-var targtime = "2016/12/29 23:44";
+var targtime = "2016/12/29 23:45";
 
 var sound = new Audio("src/game_maoudamashii_9_jingle09.mp3");
 
