@@ -1,5 +1,5 @@
-//var targtime = "2017/1/1";
-var targtime = "2016/12/29 23:45";
+var targtime = "2017/1/1";
+//var targtime = "2016/12/29 23:50";
 
 // var sound = new Audio("src/xxx.mp3");
 
