@@ -1,7 +1,7 @@
 //var targtime = "2017/1/1";
 var targtime = "2016/12/29 23:45";
 
-var sound = new Audio("src/game_maoudamashii_9_jingle09.mp3");
+// var sound = new Audio("src/xxx.mp3");
 
 function newyear2017() {
   var APP_NAME = 'New Year 2017';
@@ -102,7 +102,7 @@ function newyear2017() {
     sprite.css('visibility', 'visible');
     $('#note').show();
     $('#footer').show();
-    sound.play();
+    //sound.play();
   }
 
   agent_checker();
