@@ -1,4 +1,6 @@
-function sprite() {
+var targtime = "2016/12/29 22:00";
+
+function newyear2017() {
   var APP_NAME = 'New Year 2017';
   var VERSION = '1.1';
 
@@ -93,11 +95,42 @@ function sprite() {
     });
   }
 
+  function prep() {
+    sprite.css('visibility', 'visible');
+    $('#note').show();
+    $('#footer').show();
+  }
+
   agent_checker();
   draw_arrow();
+  prep();
   add_hook_event();
 }
 
+
+function countdown() {
+  var title = $('#title');
+  var date_NY = (new Date(targtime)).getTime();
+  var dt;
+  var itv;
+  title.css({'margin-top': '100px', 'font-size': '40pt'});
+  function countdown_1() {
+    dt = (date_NY - (new Date().getTime()))/1000;
+    if (dt > 0) {
+      title.html(~~(dt/3600) + ':' + ~~((dt % 3600)/60) + ':' + ~~(dt % 60));
+    } else {
+      clearInterval(itv);
+      location.reload();
+    }
+  }
+  itv = setInterval(countdown_1, 1000);
+}
+
+
 $(function() {
-  sprite();
+  if (new Date().getTime() >= new Date(targtime).getTime()) {
+    newyear2017();
+  } else {
+    countdown();
+  }
 });
