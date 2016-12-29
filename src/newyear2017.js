@@ -1,4 +1,5 @@
-var targtime = "2017/1/1";
+//var targtime = "2017/1/1";
+var targtime = "2016/12/29 22:19";
 
 function newyear2017() {
   var APP_NAME = 'New Year 2017';
