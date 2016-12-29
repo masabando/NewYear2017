@@ -24,7 +24,7 @@ html {
 #title {
   color: #eef;
   font-size: 30px;
-  text-shadow: 0 0 6px #aaf;
+  text-shadow: 0 0 10px #aaf, 0 0 10px #aaf;
 }
 
 #sprite {

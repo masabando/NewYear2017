@@ -114,10 +114,13 @@ function countdown() {
   var dt;
   var itv;
   title.css({'margin-top': '100px', 'font-size': '40pt'});
+  function zeropad(n) { return ("0" + ~~n).slice(-2); }
   function countdown_1() {
     dt = (date_NY - (new Date().getTime()))/1000;
     if (dt > 0) {
-      title.html(~~(dt/3600) + ':' + ~~((dt % 3600)/60) + ':' + ~~(dt % 60));
+      title.html([~~(dt/3600),
+                  zeropad((dt % 3600)/60),
+                  zeropad(dt % 60)].join(":"));
     } else {
       clearInterval(itv);
       location.reload();
