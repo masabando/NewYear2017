@@ -5,7 +5,7 @@ var targtime = "2018/12/19 17:29";
 
 function newyear2017() {
   var APP_NAME = 'New Year 2019';
-  var VERSION = '1.1';
+  var VERSION = '1.2';
 
   var sprite = $("#sprite > div");
   var event = {
@@ -31,7 +31,7 @@ function newyear2017() {
       event.down = "touchstart";
       event.up = "touchend";
       event.move = "touchmove";
-      $(window).on('touchmove', function(e) { e.preventDefault(); });
+      $(window).on('touchmove', function(e) { e.preventDefault(); }, {passive: false});
       $('#title').html('＼ Swipe Me! ／');
     } else {
       $('#title').html('＼ Drag Me! ／');
