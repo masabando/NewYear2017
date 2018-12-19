@@ -4,7 +4,7 @@ var targtime = "2018/12/19 17:29";
 // var sound = new Audio("src/xxx.mp3");
 
 function newyear2017() {
-  var APP_NAME = 'New Year 2018';
+  var APP_NAME = 'New Year 2019';
   var VERSION = '1.1';
 
   var sprite = $("#sprite > div");
