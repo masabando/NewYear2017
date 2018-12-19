@@ -31,7 +31,7 @@ function newyear2017() {
       event.down = "touchstart";
       event.up = "touchend";
       event.move = "touchmove";
-      // $(window).on('touchmove', function(e) { e.preventDefault(); });
+      $(window).on('touchmove', function(e) { e.preventDefault(); });
       $('#title').html('＼ Swipe Me! ／');
     } else {
       $('#title').html('＼ Drag Me! ／');
