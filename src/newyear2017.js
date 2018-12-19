@@ -1,4 +1,4 @@
-var targtime = "2019/1/1 0:0";
+var targtime = "2018/1/1 0:0";
 //var targtime = "2016/12/29 23:50";
 
 // var sound = new Audio("src/xxx.mp3");
@@ -121,6 +121,17 @@ function newyear2017() {
 
 
 function countdown() {
+  function agent_checker() {
+    var agent = navigator.userAgent;
+    if(agent.search(/iPhone/) != -1 || agent.search(/iPad/) != -1
+       || agent.search(/iPod/) != -1 || agent.search(/Android/) != -1) {
+      event.down = "touchstart";
+      event.up = "touchend";
+      event.move = "touchmove";
+      smart_phone_flag = true;
+      window.addEventListener('touchmove', function(e) { e.preventDefault(); }, {passive: false});
+    }
+  }
   var title = $('#title');
   var date_NY = (new Date(targtime)).getTime();
   var dt;
