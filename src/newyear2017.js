@@ -1,4 +1,4 @@
-var targtime = "2018/12/19 17:29";
+var targtime = "2019/1/1 0:0";
 //var targtime = "2016/12/29 23:50";
 
 // var sound = new Audio("src/xxx.mp3");
