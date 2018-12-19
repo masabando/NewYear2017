@@ -23,6 +23,7 @@ function newyear2017() {
   var x0 = 0; // base-mouseX
   var flag = false; // rotate flag (auto)
   var logflag = false;
+  var smart_phone_flag = false;
 
   function agent_checker() {
     var agent = navigator.userAgent;
@@ -31,6 +32,7 @@ function newyear2017() {
       event.down = "touchstart";
       event.up = "touchend";
       event.move = "touchmove";
+      smart_phone_flag = true;
       //window.addEventListener('touchmove', function(e) { e.preventDefault(); }, {passive: false});
       $('#title').html('＼ Swipe Me! ／');
     } else {
@@ -100,7 +102,7 @@ function newyear2017() {
           $('#log').html(pic.y0 + pic.y);
         }
       }
-      e.preventDefault();
+      if (smart_phone_flag) { e.preventDefault(); }
     }, {passive: false});
   }
 
