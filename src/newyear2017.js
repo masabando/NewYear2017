@@ -73,12 +73,12 @@ function newyear2017() {
   }
 
   function add_hook_event() {
-    function get_mousex(e) {
-      var t = e.originalEvent.touches;
+    function get_mousex(e, jq) {
+      var t = (jq ? e.originalEvent : e).touches;
       return (t ? t[0] : e).screenY;
     }
     $('html').on(event.down, function(e) {
-      x0 = get_mousex(e);
+      x0 = get_mousex(e, true);
       pic.y = 0;
       flag = true;
     });
