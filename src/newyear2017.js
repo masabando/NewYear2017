@@ -1,10 +1,10 @@
-var targtime = "2017/1/1";
+var targtime = "2018/12/19 17:29";
 //var targtime = "2016/12/29 23:50";
 
 // var sound = new Audio("src/xxx.mp3");
 
 function newyear2017() {
-  var APP_NAME = 'New Year 2017';
+  var APP_NAME = 'New Year 2018';
   var VERSION = '1.1';
 
   var sprite = $("#sprite > div");
@@ -16,7 +16,7 @@ function newyear2017() {
   var pic = {// sprite.property
     width: 300,
     height: 300,
-    max: 80, // number of pics
+    max: 86, // number of pics
     y0: 0, // base-y
     y: 0 // current-y
   };
@@ -39,9 +39,9 @@ function newyear2017() {
   }
 
   function draw_arrow() {
-    var w = pic.width, h = ~~((1.0/3.0)*pic.height);
+    var w = pic.height, h = ~~((1.0/3.0)*pic.width);
     $('#arrow_container').html(
-      '<canvas id="arrow" width="' + w + '" height="' + h + '"></canvas>'
+      '<canvas id="arrow" width="' + h + '" height="' + w + '"></canvas>'
     );
     var canvas = $('#arrow')[0];
     if ( ! canvas || ! canvas.getContext ) {
@@ -55,6 +55,9 @@ function newyear2017() {
     grad.addColorStop(0, 'rgba(80,80,255,0)');
     grad.addColorStop(1, 'rgba(120,120,255,0.7)');
     ctx.fillStyle = grad;
+    ctx.translate(h/2, w/6);
+    ctx.rotate(0.5*Math.PI);
+    ctx.translate(-h/2, -w/6);
     ctx.beginPath();
     ctx.moveTo(~~(w-0.5*(1-aw)*w), ~~(0.5*h));
     ctx.lineTo(~~(w-0.5*(1-aw)*w - h*ah*hr), ~~(h-0.5*(1-ah)*h));
@@ -70,7 +73,7 @@ function newyear2017() {
   function add_hook_event() {
     function get_mousex(e) {
       var t = e.originalEvent.touches;
-      return (t ? t[0] : e).screenX;
+      return (t ? t[0] : e).screenY;
     }
     $('html').on(event.down, function(e) {
       x0 = get_mousex(e);
@@ -85,7 +88,7 @@ function newyear2017() {
       var x;
       if (flag) {
         x = get_mousex(e);
-        pic.y = ~~(-(x-x0)/20)*pic.height;
+        pic.y = (~~(-(x-x0)/20))*pic.height;
         sprite.css('background-position', '0 ' + (pic.y0 + pic.y) + 'px');
         if (pic.y0 + pic.y <= -pic.height*pic.max) {
           $('#title').html('＼ Happy New Year ／');

@@ -6,7 +6,7 @@ Box b;
 void setup() {
   size(300,300,P3D);
   colorMode(HSB,360,100,100,100);
-  textFont(loadFont("Migu-1C-Bold-48.vlw"));
+  textFont(loadFont("migu-1c-bold-48.vlw"));
   textAlign(CENTER, CENTER);
   b = new Box(boxsize, "あけましておめでとうございます！");
 }
@@ -16,7 +16,7 @@ void draw() {
 
   translate(width/2, height/2);
 
-  camera(0,-50,100, 0,10,0, 0,1,0);
+  camera(50,-50,100, 0,10,0, 0,1,0);
   ambientLight(10,10,10);
   directionalLight(0,0,100, 0,2,-3);
 
@@ -45,7 +45,7 @@ class Box {
     if (face == str_a.length) exit();
 
     // box
-    rotateY(radians(rotangle % 360));
+    rotateX(-radians(rotangle % 360));
     noStroke();
     fill((int)(cspd*frameCount) % 360, 40, 90);
     box(bsize, bsize, bsize);
@@ -55,8 +55,8 @@ class Box {
     textSize(16);
     fill(0, 0, 10);
     pushMatrix();
-    rotateX(+PI/2);
-    text("2017", 0,0,tz);
+    rotateY(PI/2);
+    text("2018", 0,0,tz);
     popMatrix();
 
     // text
@@ -64,7 +64,7 @@ class Box {
     fill(0, 0, 10);
     for (int i = 0; i <= 3; i++) {
       text(str_a[flist[i] % str_a.length], 0,0,tz);
-      rotateY(-PI/2.0);
+      rotateX(PI/2.0);
     }
     if (pface != face) {
       flist[pface % 4] = (flist[pface % 4] + 4) % str_a.length;
