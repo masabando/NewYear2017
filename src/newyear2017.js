@@ -97,8 +97,8 @@ function newyear2017() {
           $('#log').css('color', '#fff');
           $('#log').html(pic.y0 + pic.y);
         }
+        e.preventDefault();
       }
-      e.preventDefault();
     }, {passive: false}
     );
   }
