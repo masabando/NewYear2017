@@ -31,7 +31,7 @@ function newyear2017() {
       event.down = "touchstart";
       event.up = "touchend";
       event.move = "touchmove";
-      window.addEventListener('touchmove', function(e) { e.preventDefault(); }, {passive: false});
+      //window.addEventListener('touchmove', function(e) { e.preventDefault(); }, {passive: false});
       $('#title').html('＼ Swipe Me! ／');
     } else {
       $('#title').html('＼ Drag Me! ／');
@@ -84,7 +84,9 @@ function newyear2017() {
       flag = false;
       pic.y0 = (pic.y0 + pic.y) % (pic.height*pic.max);
     });
-    $('html').on(event.move, function(e) {
+
+    //$('html').on(event.move, function(e) {
+    window.addEventListener(event.move, function(e) {
       var x;
       if (flag) {
         x = get_mousex(e);
@@ -98,7 +100,8 @@ function newyear2017() {
           $('#log').html(pic.y0 + pic.y);
         }
       }
-    });
+      e.preventDefault();
+    }, {passive: false});
   }
 
   function prep() {
