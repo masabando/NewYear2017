@@ -132,6 +132,7 @@ function countdown() {
       window.addEventListener('touchmove', function(e) { e.preventDefault(); }, {passive: false});
     }
   }
+  agent_checker();
   var title = $('#title');
   var date_NY = (new Date(targtime)).getTime();
   var dt;
